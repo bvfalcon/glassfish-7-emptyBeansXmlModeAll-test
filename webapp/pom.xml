@@ -62,6 +62,10 @@
                   <url>https://download.eclipse.org/ee4j/glassfish/glassfish-7.0.15.zip</url>
                   <downloadDir>${project.build.directory}</downloadDir>
                 </zipUrlInstaller>
+                <systemProperties>
+                  <org.jboss.weld.environment.servlet.emptyBeansXmlModeAll>true</org.jboss.weld.environment.servlet.emptyBeansXmlModeAll>
+                  <org.jboss.weld.se.discovery.emptyBeansXmlModeAll>true</org.jboss.weld.se.discovery.emptyBeansXmlModeAll>
+                </systemProperties>
               </container>
             </configuration>
           </execution>
