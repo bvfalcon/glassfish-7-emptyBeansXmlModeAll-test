@@ -18,7 +18,7 @@
     <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-api</artifactId>
-      <version>10.0.0</version>
+      <version>9.1.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -27,5 +27,47 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven3-plugin</artifactId>
+        <version>1.10.14</version>
+        <executions>
+          <execution>
+            <id>gf6</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <container>
+              <containerId>glassfish6x</containerId>
+                <zipUrlInstaller>
+                  <url>https://download.eclipse.org/ee4j/glassfish/glassfish-6.2.5.zip</url>
+                  <downloadDir>${project.build.directory}</downloadDir>
+                </zipUrlInstaller>
+              </container>
+            </configuration>
+          </execution>
+          <execution>
+            <id>gf7</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <container>
+              <containerId>glassfish7x</containerId>
+                <zipUrlInstaller>
+                  <url>https://download.eclipse.org/ee4j/glassfish/glassfish-7.0.15.zip</url>
+                  <downloadDir>${project.build.directory}</downloadDir>
+                </zipUrlInstaller>
+              </container>
+            </configuration>
+          </execution>
+      </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
